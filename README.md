@@ -10,15 +10,14 @@
   <a href="https://arxiv.org/pdf/2309.11235.pdf">📃Paper</a> |
   <a href="https://discord.gg/pQjnXvNKHY">💭Discord</a> 
   <br><br>
-  <strong>🔥 First 7B model that Achieves Comparable Results with ChatGPT (March)! 🔥</strong>
+  <strong>🏆 The Overall Best Performing Open Source 7B Model 🏆</strong>
   <br>
-  <strong>🤖 #1 Open-source model on MT-bench scoring 7.81, outperforming 70B models 🤖</strong>
+  <strong>🤖 Outperforms ChatGPT (March) and Grok-1 🤖</strong>
   <br>
 </p>
 
 <div align="center">
-  <img src="assets/openchat.png" style="width: 45%;">
-  <img src="assets/openchat_grok.png" style="width: 47%;">
+  <img src="https://github.com/alpayariyak/openchat/blob/master/assets/1210bench.png?raw=true" style="width: 95%;">
 </div>
 
 - OpenChat is an innovative library of **open-source language models**, fine-tuned with [**C-RLFT**](https://arxiv.org/pdf/2309.11235.pdf) - a strategy inspired by offline reinforcement learning.
@@ -29,10 +28,15 @@
 
 # ✨ News
 
+- [2023/12/10] We released the first update of [OpenChat 3.5](openchat/openchat-3.5-1210), improved coding by 15 points 🚀.
+
 - [2023/11/01] We released the [OpenChat-3.5-7B](https://huggingface.co/openchat/openchat_3.5) model, surpassing ChatGPT on various benchmarks 🔥.
 
 - [2023/09/21] We released our paper [OpenChat: Advancing Open-source Language Models with Mixed-Quality Data](https://arxiv.org/pdf/2309.11235.pdf).
-
+  
+<details>
+  <summary>Read more</summary>
+  
 - [2023/09/03] We released the [OpenChat V3.2 SUPER]([#models](https://huggingface.co/openchat/openchat_v3.2_super)) model.
 
 - [2023/08/04] We have launched an [Online Demo](https://openchat.team) featuring the latest version, OpenChat 3.2.
@@ -42,20 +46,22 @@
 - [2023/07/07] We released the [OpenChat V2 model series](#legacy-models).
 
 - [2023/07/01] We released the [OpenChat V1 model series](#legacy-models).
+</details>
 
 # 🏷️ Benchmarks
 
-| Model              | # Params | Average  | MT-Bench     | AGIEval  | BBH MC   | TruthfulQA    | MMLU         | HumanEval       | BBH CoT     | GSM8K        |
-|--------------------|----------|----------|--------------|----------|----------|---------------|--------------|-----------------|-------------|--------------|
-| OpenChat-3.5       | **7B**   | **61.6** | 7.81         | **47.4** | **47.6** | **59.1**      | 64.3         | **55.5**        | 63.5        | **77.3**     |
-| ChatGPT (March)*   | ?        | 61.5     | **7.94**     | 47.1     | **47.6** | 57.7          | **67.3**     | 48.1            | **70.1**    | 74.9         |
-|                    |          |          |              |          |          |               |              |                 |             |              |
-| OpenHermes 2.5     | 7B       | 59.3     | 7.54         | 46.5     | 49.4     | 57.5          | 63.8         | 48.2            | 59.9        | 73.5         |
-| OpenOrca Mistral   | 7B       | 52.7     | 6.86         | 42.9     | 49.4     | 45.9          | 59.3         | 38.4            | 58.1        | 59.1         |
-| Zephyr-β^          | 7B       | 34.6     | 7.34         | 39.0     | 40.6     | 40.8          | 39.8         | 22.0            | 16.0        | 5.1          |
-| Mistral**          | 7B       | -        | 6.84         | 38.0     | 39.0     | -             | 60.1         | 30.5            | -           | 52.2         |
-| Open-source SOTA** | 13B-70B  | 61.4     | 7.71         | 41.7     | 49.7     | 62.3          | 63.7         | 73.2            | 41.4        | 82.3         |
-|                    |          |          | WizardLM 70B | Orca 13B | Orca 13B | Platypus2 70B | WizardLM 70B | WizardCoder 34B | Flan-T5 11B | MetaMath 70B |
+| Model              | # Params | Average  | MT-Bench     | HumanEval       | BBH MC   | AGIEval  | TruthfulQA    | MMLU         | GSM8K        | BBH CoT     |
+|--------------------|----------|----------|--------------|-----------------|----------|----------|---------------|--------------|--------------|-------------|
+| OpenChat-3.5-1210  | **7B**   | **63.8** | 7.76         | **68.9**        | **49.5** | **48.0** | **61.8**      | 65.3         | **77.3**     | 61.8        |
+| OpenChat-3.5       | **7B**   | 61.6     | 7.81         | 55.5            | 47.6     | 47.4     | 59.1          | 64.3         | **77.3**     | 63.5        |
+| ChatGPT (March)*   | ?        | 61.5     | **7.94**     | 48.1            | 47.6     | 47.1     | 57.7          | **67.3**     | 74.9         | **70.1**    |
+|                    |          |          |              |                 |          |          |               |              |              |             |
+| OpenHermes 2.5     | 7B       | 59.3     | 7.54         | 48.2            | 49.4     | 46.5     | 57.5          | 63.8         | 73.5         | 59.9        |
+| OpenOrca Mistral   | 7B       | 52.7     | 6.86         | 38.4            | 49.4     | 42.9     | 45.9          | 59.3         | 59.1         | 58.1        |
+| Zephyr-β^          | 7B       | 34.6     | 7.34         | 22.0            | 40.6     | 39.0     | 40.8          | 39.8         | 5.1          | 16.0        |
+| Mistral            | 7B       | -        | 6.84         | 30.5            | 39.0     | 38.0     | -             | 60.1         | 52.2         | -           |
+| Open-source SOTA** | 13B-70B  | 61.4     | 7.71         | 73.2            | 49.7     | 41.7     | 62.3          | 63.7         | 82.3         | 41.4        |
+|                    |          |          | WizardLM 70B | WizardCoder 34B | Orca 13B | Orca 13B | Platypus2 70B | WizardLM 70B | MetaMath 70B | Flan-T5 11B |
 
 <details>
   <summary>Evaluation details</summary>
@@ -71,21 +77,13 @@ All models are evaluated in chat mode (e.g. with the respective conversation tem
 <details>
   <summary>Reproducing benchmarks</summary>
 
-Reasoning:
+Reasoning and Coding:
 
 Note: Please run the following commands at the base directory of this repository.
 
 ```bash
-python -m ochat.evaluation.run_eval --condition "GPT4 Correct" --model openchat/openchat_3.5
+python -m ochat.evaluation.run_eval --condition "GPT4 Correct" --model openchat/openchat-3.5-1210 --eval_sets coding fs_cothub/bbh zs/agieval zs/bbh_mc_orca zs/truthfulqa_orca
 python ochat/evaluation/view_results.py
-```
-
-HumanEval:
-
-Note: Please run the following commands at the base directory of this repository.
-
-```bash
-python -m ochat.evaluation.run_eval --condition "Code" --eval_sets coding --model openchat/openchat_3.5
 python ochat/evaluation/convert_to_evalplus.py
 ```
 
@@ -93,6 +91,15 @@ Then all humaneval code samples are placed in `ochat/evaluation/evalplus_codegen
 
 ```bash
 docker run -v $(pwd):/app ganler/evalplus:latest --dataset humaneval --samples samples.jsonl
+```
+
+Mathematical Reasoning:
+
+Note: Please run the following commands at the base directory of this repository.
+
+```bash
+python -m ochat.evaluation.run_eval --condition "Math Correct" --model openchat/openchat-3.5-1210 --eval_sets fs_cothub/gsm8k zs/math
+python ochat/evaluation/view_results.py
 ```
 
 MT-Bench:
@@ -103,19 +110,20 @@ Note: Due to non-zero temperature and GPT-4 API changes over time, there might b
 
 ```bash
 cd fastchat/llm_judge
-python gen_api_answer.py --model openchat_3.5 --max-tokens 4096 --parallel 128 --openai-api-base http://localhost:18888/v1
-python gen_judgment.py --model-list openchat_3.5 --parallel 8 --mode single
+python gen_api_answer.py --model openchat-3.5-1210 --max-tokens 4096 --parallel 128 --openai-api-base http://localhost:18888/v1
+python gen_judgment.py --model-list openchat-3.5-1210 --parallel 8 --mode single
 ```
 
 </details>
 
 ## 🎇 Comparison with [X.AI Grok](https://x.ai/)
 
-|              | License     | # Param | Average  | MMLU | HumanEval | MATH     | GSM8k    |
-|--------------|-------------|---------|----------|------|-----------|----------|----------|
-| OpenChat 3.5 | Apache-2.0  | 7B      | **56.4** | 64.3 | 55.5      | **28.6** | **77.3** |
-| Grok-0       | Proprietary | 33B     | 44.5     | 65.7 | 39.7      | 15.7     | 56.8     |
-| Grok-1       | Proprietary | ?       | 55.8     | 73   | 63.2      | 23.9     | 62.9     |
+|                   | License     | # Param | Average  | MMLU | HumanEval | MATH     | GSM8k    |
+|-------------------|-------------|---------|----------|------|-----------|----------|----------|
+| OpenChat 3.5 1210 | Apache-2.0  | **7B**  | **60.1** | 65.3 | **68.9**  | **28.9** | **77.3** |
+| OpenChat 3.5      | Apache-2.0  | **7B**  | 56.4     | 64.3 | 55.5      | 28.6     | **77.3** |
+| Grok-0            | Proprietary | 33B     | 44.5     | 65.7 | 39.7      | 15.7     | 56.8     |
+| Grok-1            | Proprietary | ???B    | 55.8     | 73   | 63.2      | 23.9     | 62.9     |
 
 # ⬇️ Installation
 > [!NOTE]
@@ -179,19 +187,19 @@ pip3 install -e .
 ### For a single GPU (e.g. RTX 3090, 4090)
 
 ```bash
-python -m ochat.serving.openai_api_server --model openchat/openchat_3.5
+python -m ochat.serving.openai_api_server --model openchat/openchat-3.5-1210
 ```
 
 ### For multiple GPUs (tensor parallel)
 
 ```bash
 # N is the number of tensor parallel GPUs
-python -m ochat.serving.openai_api_server --model openchat/openchat_3.5 --engine-use-ray --worker-use-ray --tensor-parallel-size N
+python -m ochat.serving.openai_api_server --model openchat/openchat-3.5-1210 --engine-use-ray --worker-use-ray --tensor-parallel-size N
 ```
 
 use `-h` to see more settings
 ```bash
-python -m ochat.serving.openai_api_server --model openchat/openchat_3.5 -h
+python -m ochat.serving.openai_api_server --model openchat/openchat-3.5-1210 -h
 ```
 
 <details>
@@ -205,6 +213,8 @@ If you want to deploy the server as an online service, you can use `--api-keys s
 
 Once started, the server listens at `localhost:18888` for requests and is compatible with the [OpenAI ChatCompletion API specifications](https://platform.openai.com/docs/api-reference/chat). 
 
+💡 **Default Mode (GPT4 Correct)**: Best for coding, chat and general tasks
+
 ```bash
 curl http://localhost:18888/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -214,19 +224,17 @@ curl http://localhost:18888/v1/chat/completions \
   }'
 ```
 
-### Coding Mode
+🧮 **Mathematical Reasoning Mode**: Tailored for solving math problems
 
 ```bash
 curl http://localhost:18888/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
     "model": "openchat_3.5",
-    "condition": "Code",
-    "messages": [{"role": "user", "content": "Write an aesthetic TODO app using HTML5 and JS, in a single file. You should use round corners and gradients to make it more aesthetic."}]
+    "condition": "Math Correct",
+    "messages": [{"role": "user", "content": "10.3 − 7988.8133 = "}]
   }'
 ```
-
-</details>
 
 # <a id="web-ui"></a> 🌐 Web UI - [OpenChat-UI](https://github.com/imoneoi/openchat-ui)
 
@@ -237,17 +245,21 @@ After launching the API server, OpenChat provide user interface that easy to int
 > [!WARNING]
 > It's recommended to use our optimized API server for deployment. Inferencing with Transformers will be slower.
 
-The default conversation template is shown below:
+💡 **Default Mode (GPT4 Correct)**: Best for coding, chat and general tasks
 
 ```
 GPT4 Correct User: Hello<|end_of_turn|>GPT4 Correct Assistant: Hi<|end_of_turn|>GPT4 Correct User: How are you today?<|end_of_turn|>GPT4 Correct Assistant:
 ```
 
-The following is coding mode template, which may improve performance on coding tasks.
+🧮 **Mathematical Reasoning Mode**: Tailored for solving math problems
 
 ```
-Code User: Implement quicksort using C++<|end_of_turn|>Code Assistant:
+Math Correct User: 10.3 − 7988.8133=<|end_of_turn|>Math Correct Assistant:
 ```
+
+⚠️ **Notice:** Remember to set `<|end_of_turn|>` as end of generation token.
+
+The default (GPT4 Correct) template is also available as the integrated `tokenizer.chat_template`, which can be used instead of manually specifying the template.
 
 # <a id="training"></a> 🛠️ Training
 
@@ -259,20 +271,26 @@ OpenChat supports Llama 2 and Mistral models. Please first choose a base model t
 
 | Base Model | Size | Weights (with EOT token)          | Model Type              | Recommended Batch Size per GPU (8xA100 80GB) |
 |------------|------|-----------------------------------|-------------------------|--------------------------------------|
-| Mistral    | 7B   | `imone/Mistral_7B_with_EOT_token` | `openchat_v3.2_mistral` | 83968                                |
-| Llama 2    | 7B   | `imone/LLaMA2_7B_with_EOT_token`  | `openchat_v3.2`         | 83968                                |
+| Mistral    | 7B   | `imone/Mistral_7B_with_EOT_token` | `openchat_v3.2_mistral` | 77824                                |
+| Llama 2    | 7B   | `imone/LLaMA2_7B_with_EOT_token`  | `openchat_v3.2`         | 77824                                |
 | Llama 2    | 13B  | `imone/Llama2_13B_with_EOT_token` | `openchat_v3.2`         | 36864                                |
 
 Note: The OpenChat conversation template requires an `<|end_of_turn|>` special token. The base model specified must include this token. Our provided weights are the original base weights with this token added. If you want to add them manually, use the `convert_llama_weights_to_hf_add_tokens.py` or `mistral_add_tokens.py` in the `scripts` directory.
 
-## Installing DeepSpeed
+## Installing DeepSpeed and Flash Attention
 
 First, ensure that the CUDA `nvcc` compiler is available in your environment. If it is not, install the CUDA toolkit that matches the version used by PyTorch.
 
-Next, install DeepSpeed:
+Next, install building dependencies:
 
 ```bash
-pip install deepspeed
+pip install packaging ninja
+```
+
+Finally, install the packages:
+
+```bash
+pip install deepspeed flash-attn
 ```
 
 ### Preparing Your Data
@@ -372,6 +390,7 @@ Our OpenChat 3.5 `code` and `models` are distributed under the **Apache License 
 
 | Model        | Size | Context | Weights                                                     | Serving                                                                                                     |
 |--------------|------|---------|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| OpenChat 3.5 1210 | 7B   | 8192    | [Huggingface](https://huggingface.co/openchat/openchat-3.5-1210) | `python -m ochat.serving.openai_api_server --model openchat/openchat-3.5-1210 --engine-use-ray --worker-use-ray` |
 | OpenChat 3.5 | 7B   | 8192    | [Huggingface](https://huggingface.co/openchat/openchat_3.5) | `python -m ochat.serving.openai_api_server --model openchat/openchat_3.5 --engine-use-ray --worker-use-ray` |
 
 ## <a id="legacy-models"></a> Legacy Models
@@ -384,15 +403,6 @@ To run the models on multiple GPUs with smaller VRAM, you can enable tensor para
 |--------------|------|---------|--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | OpenChat 3.2 SUPER | 13B  | 4096    | [Huggingface](https://huggingface.co/openchat/openchat_v3.2_super) | `python -m ochat.serving.openai_api_server --model openchat/openchat_v3.2_super --engine-use-ray --worker-use-ray` |
 
-# 💌Contact
-
-We are a student team  Tsinghua University, working on OpenChat, a project that requires additional computing power or LLMs API keys for further development. If you are interested in our project and would like to offer support, please feel free to reach out to us:
-
-* Wang Guan [imonenext at gmail dot com]
-* Cheng Sijie [csj23 at mails dot tsinghua dot edu dot cn]
-
-We look forward to hearing  you and collaborating on this exciting project!
-
 # Citation
 
 ```
@@ -404,10 +414,22 @@ We look forward to hearing  you and collaborating on this exciting project!
 }
 ```
 
-# Acknowledgements
+# 💌Contact
 
-We extend our heartfelt gratitude to Alignment Lab AI, Nous Research, and Pygmalion AI for their substantial contributions to data collection and model training.
+We are a student team at Tsinghua University, working on OpenChat, a project that requires additional computing power or LLMs API keys for further development. If you are interested in our project and would like to offer support, please feel free to reach out to us:
 
-Special thanks go to Changling Liu  GPT Desk Pte. Ltd., Qiying Yu at Tsinghua University, Baochang Ma, and Hao Wan from 01.AI company for their generous provision of resources. We are also deeply grateful to Jianxiong Li and Peng Li at Tsinghua University for their insightful discussions.
+**Project Leader:**
+- Guan Wang [imonenext at gmail dot com]
+- [Sijie Cheng](https://adacheng.github.io/) [csj23 at mails dot tsinghua dot edu dot cn]
 
-Furthermore, we appreciate the developers behind the following projects for their significant contributions to our research: [Mistral](https://mistral.ai/), [Chain-of-Thought Hub](https://github.com/FranxYao/chain-of-thought-hub), [Llama 2](https://ai.meta.com/llama/), [Self-Instruct](https://arxiv.org/abs/2212.10560), [FastChat (Vicuna)](https://github.com/lm-sys/FastChat), [Alpaca](https://github.com/tatsu-lab/stanford_alpaca.git), and [StarCoder](https://github.com/bigcode-project/starcoder). Their work has been instrumental in driving our research forward.
+**Main Contributors:**
+- [Xianyuan Zhan](https://scholar.google.com.hk/citations?user=pDMnGloAAAAJ&hl=zh-CN) (Tsinghua University): Provided invaluable advice on paper writing.
+- [Alpay Ariyak](https://github.com/alpayariyak): Responsible for data collection and PR for `openchat-3.5-1210`, including updates to model and organization cards.
+- LDJ: Tasked with partial data collection for `openchat-3.5`.
+
+**Sponsors:**
+- [Sen Song](https://scholar.google.com/citations?user=cYgtRP4AAAAJ&hl=en) (Tsinghua University), [Yang Liu](https://nlp.csai.tsinghua.edu.cn/~ly/) (Tsinghua University), [01.AI Company](https://www.lingyiwanwu.com/en), [RunPod](https://www.runpod.io/), Changling Liu (GPT Desk Pte. Ltd.), Qiying Yu (Tsinghua University), AutoMeta (Alignment Lab AI).
+
+**Special Thanks:**
+- We express our profound gratitude to Alignment Lab AI, Nous Research, and Pygmalion AI for their significant contributions to data collection and model training. We also extend our special thanks to Xiangang Li, Baochang Ma, and Hao Wan from 01.AI company for their generous provision of resources. We also thank Jianxiong Li and Peng Li at Tsinghua University for their insightful discussions that have enriched our work.
+- We acknowledge and thank the developers behind these projects: [Mistral](https://mistral.ai/), [Chain-of-Thought Hub](https://github.com/FranxYao/chain-of-thought-hub), [Llama 2](https://ai.meta.com/llama/), [Self-Instruct](https://arxiv.org/abs/2212.10560), [FastChat (Vicuna)](https://github.com/lm-sys/FastChat), [Alpaca](https://github.com/tatsu-lab/stanford_alpaca.git), and [StarCoder](https://github.com/bigcode-project/starcoder). Their work has been instrumental in driving our research forward.
